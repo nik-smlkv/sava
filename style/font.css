@@ -8,9 +8,18 @@
 }
 
 @font-face {
-	font-family: 'Sverdlovsk';
-	src: url('../fonts/sverdlovsk.woff2') format("woff2 supports variations"),
-		url('../fonts/sverdlovsk.woff2') format("woff2-variations");
+	font-family: 'Cormorant Garamond';
+	src: url('../fonts/CormorantVariable.woff2') format("woff2 supports variations"),
+		url('../fonts/CormorantVariable.woff2') format("woff2-variations");
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bellefair';
+	src: url('../fonts/Bellefair-Regular.woff2') format("woff2 supports variations"),
+		url('../fonts/Bellefair-Regular.woff2') format("woff2-variations");
 	font-style: normal;
 	font-weight: 300 700;
 	font-display: swap;

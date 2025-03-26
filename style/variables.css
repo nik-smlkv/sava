@@ -2,14 +2,15 @@
 
 :root {
 	--ff-main: "Manrope", sans-serif;
-	--primary-main-color: #161D2D;
-	--text-color-secondary: #5D6570;
+	--ff-bell: "Bellefair", sans-serif;
+	--ff-corm: "Cormorant", sans-serif;
+	--primary-main-color: #1C3652;
+	--text-color-secondary: #727070;
 	--bl-color: #000000;
 	--signature-color: #D1D4D8;
-	--block-header-color: #D1D4D8;
-	--blue-color: #0474DC;
-	--blue-light-color: #42B0F9;
 	--wh-color: #FFFFFF;
+	--block-header-color: var(--wh-color);
+	--blue-light-color: #42B0F9;
 	--bg-main: #ffffff;
 	--title-span-color: #42B0F9;
 	--fz-title: clamp(48px, 4vw, 80px);
