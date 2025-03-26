@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
 
 :root {
-	--ff-main: "Manrope", sans-serif;
+	--ff-title: "Manrope", sans-serif;
 	--ff-bell: "Bellefair", sans-serif;
-	--ff-corm: "Cormorant", sans-serif;
+	--ff-main: "Cormorant Garamond", sans-serif;
 	--primary-main-color: #1C3652;
-	--text-color-secondary: #727070;
+	--text-color-secondary: #0D1925;
 	--bl-color: #000000;
 	--signature-color: #D1D4D8;
 	--wh-color: #FFFFFF;

@@ -1,4 +1,4 @@
-let windowsArray = ["1520", "1470", "1280", "1220", "1120", "1000"];
+let windowsArray = ["1620", "1570", "1380", "1420", "1320", "1200"];
 let originalWindowsArray = [...windowsArray]; // Оригинальная копия массива
 const burger = document.querySelector('.header__burger');
 const headerMenu = document.querySelector('.header__menu');

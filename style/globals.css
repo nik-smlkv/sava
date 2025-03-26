@@ -191,6 +191,7 @@ img {
 }
 
 .title {
+	font-family: var(--ff-title);
 	font-size: var(--fz-title);
 	line-height: var(--lh-title);
 	letter-spacing: -3px;
@@ -239,5 +240,5 @@ h2.title {
 }
 
 .block-height {
-	height: 100vh;
+	height: 91vh;
 }
