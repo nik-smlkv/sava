@@ -109,8 +109,6 @@ img {
 	padding: 16px 24px;
 	transition: var(--tr-btn);
 	text-transform: uppercase;
-	border-radius: 100px;
-	letter-spacing: 0.383px;
 	height: 56px;
 	cursor: pointer;
 }
@@ -205,19 +203,49 @@ img {
 
 }
 
-h2.title {
-	--lh-title: 100%;
-	line-height: var(--lh-title);
+.ff-man {
+	font-family: var(--ff-title);
+	line-height: 150%;
+	font-variation-settings: "wght" var(--fw-default);
+	color: var(--text-color-secondary);
 }
 
+.ff-bel {
+	font-family: var(--ff-bell);
+	line-height: 128%;
+	letter-spacing: -0.4px;
+	font-variation-settings: "wght" var(--fw-title);
+	color: var(--text-color-secondary);
+}
+
+h2.title {
+	--lh-title: 115%;
+	line-height: var(--lh-title);
+	color: var(--primary-main-color);
+	font-family: var(--ff-main);
+}
+
+h2.title .title-span {
+	margin-left: 0px;
+}
+
+h2.fz-80 {
+	--fz-second-title: 80px;
+	font-size: var(--fz-second-title);
+	letter-spacing: -2.4px;
+}
+.fz-40{
+	font-size: 40px;
+}
 .tt-up {
 	text-transform: uppercase;
 }
-
+.title-project{}
 .title-dark {
 	color: var(--primary-main-color);
 }
 
+h2.title.text-light,
 .text-light {
 	color: var(--wh-color);
 }
@@ -226,8 +254,16 @@ h2.title {
 	color: var(--signature-color);
 }
 
-.text-dark {
+.fz-80 {
+	--fz-second-title: 80px;
+	font-variation-settings: "wght" var(--fw-title);
+	line-height: var(--lh-text);
 	color: var(--primary-main-color);
+	font-size: var(--fz-second-title);
+}
+
+.text-dark {
+	color: var(--text-color-secondary);
 }
 
 .section-relative {

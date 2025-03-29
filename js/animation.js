@@ -37,7 +37,7 @@ const aboutButton = document.querySelector(".about-button");
 document.addEventListener("DOMContentLoaded", () => {
 	// Register GSAP Plugins
 
-	const scrollPanel = () => {
+/* 	const scrollPanel = () => {
 		if (window.innerWidth > 768) {
 			const cont = document.querySelector("#panels-container");
 			const panels = gsap.utils.toArray("#panels-container .panel");
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 	}
-	scrollPanel();
+	scrollPanel(); */
 	/*  PARALLAX  */
-	if (window.innerWidth >= 768) {
+/* 	if (window.innerWidth >= 768) {
 		document.querySelectorAll('[data-parallax-layers]').forEach((triggerElement) => {
 			let tl1 = gsap.timeline({
 				scrollTrigger: {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				);
 			});
 		});
-	}
+	} */
 });
 /* GSAP COUNTER */
 document.addEventListener("DOMContentLoaded", () => {
