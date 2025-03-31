@@ -1,4 +1,4 @@
-const container = document.getElementById("carousel");
+/* const container = document.getElementById("carousel");
 const fullSlides = document.querySelector('.full-slides');
 let slides = gsap.utils.toArray(".showcase__item");
 const totalSlides = slides.length;
@@ -166,39 +166,6 @@ container.addEventListener("mouseleave", (e) => {
 	}
 });
 
-const swiperStatistic = new Swiper('.swiper-statistic', {
-	slidesPerView: 1,
-	slidesPerGroup: 1,
-	loop: true,
-	cssMode: true,
-	direction: 'horizontal',
-	pagination: {
-		el: '.swiper-pagination',
-		type: 'fraction',
-	},
-	clickable: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	breakpoints: {
-		320: {
-			slidesPerView: 2,
-			spaceBetween: 1,
-			slideToClickedSlide: true,
-		},
-		540: {
-			slidesPerView: 1,
-			spaceBetween: 1,
-			slideToClickedSlide: true,
-		},
-		768: {
-			slidesPerView: 4,
-			spaceBetween: 1,
-			slideToClickedSlide: true,
-		}
-	}
-});
 
 
 
@@ -264,3 +231,39 @@ swiperQuality.on('slideChange', function () {
 });
 
 updateTitle(swiperQuality.activeIndex);
+
+ */
+const swiperStatistic = new Swiper('.swiper-statistic', {
+	slidesPerView: "auto",
+	slidesPerGroup: 1,
+	spaceBetween: 10,
+	loop: true,
+	cssMode: true,
+	direction: 'horizontal',
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'fraction',
+	},
+	clickable: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});
+const swiperMaterials = new Swiper('.swiper-materials', {
+	slidesPerView: "auto",
+	slidesPerGroup: 1,
+	spaceBetween: 10,
+	loop: true,
+	cssMode: true,
+	direction: 'horizontal',
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'fraction',
+	},
+	clickable: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});

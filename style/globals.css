@@ -203,6 +203,10 @@ img {
 
 }
 
+.fz-120 {
+	font-size: 120px;
+}
+
 .ff-man {
 	font-family: var(--ff-title);
 	line-height: 150%;
@@ -234,13 +238,17 @@ h2.fz-80 {
 	font-size: var(--fz-second-title);
 	letter-spacing: -2.4px;
 }
-.fz-40{
+
+.fz-40 {
 	font-size: 40px;
 }
+
 .tt-up {
 	text-transform: uppercase;
 }
-.title-project{}
+
+.title-project {}
+
 .title-dark {
 	color: var(--primary-main-color);
 }
