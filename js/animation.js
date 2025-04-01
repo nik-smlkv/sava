@@ -37,27 +37,27 @@ const aboutButton = document.querySelector(".about-button");
 document.addEventListener("DOMContentLoaded", () => {
 	// Register GSAP Plugins
 
-/* 	const scrollPanel = () => {
-		if (window.innerWidth > 768) {
-			const cont = document.querySelector("#panels-container");
-			const panels = gsap.utils.toArray("#panels-container .panel");
-			var scrollMath = window.innerWidth > 2560 ? (-2 * (cont.scrollWidth - innerWidth)) : (-1.1 * (cont.scrollWidth - innerWidth));
-			let tween = gsap.to(panels, {
-				x: () => scrollMath,
-				ease: "none",
-				scrollTrigger: {
-					trigger: "#panels-container",
-					pin: true,
-					start: "-20%",
-					scrub: 2,
-					end: () => "+=" + (cont.scrollWidth - (innerWidth / 1.1)),
-				},
-			});
+	/* 	const scrollPanel = () => {
+			if (window.innerWidth > 768) {
+				const cont = document.querySelector("#panels-container");
+				const panels = gsap.utils.toArray("#panels-container .panel");
+				var scrollMath = window.innerWidth > 2560 ? (-2 * (cont.scrollWidth - innerWidth)) : (-1.1 * (cont.scrollWidth - innerWidth));
+				let tween = gsap.to(panels, {
+					x: () => scrollMath,
+					ease: "none",
+					scrollTrigger: {
+						trigger: "#panels-container",
+						pin: true,
+						start: "-20%",
+						scrub: 2,
+						end: () => "+=" + (cont.scrollWidth - (innerWidth / 1.1)),
+					},
+				});
+			}
 		}
-	}
-	scrollPanel(); */
+		scrollPanel(); */
 	/*  PARALLAX  */
-/* 	if (window.innerWidth >= 768) {
+	if (window.innerWidth >= 768) {
 		document.querySelectorAll('[data-parallax-layers]').forEach((triggerElement) => {
 			let tl1 = gsap.timeline({
 				scrollTrigger: {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			});;
 			const layers = [
-				{ layer: "1", yPercent: -25 },
+				{ layer: "1", yPercent: -30 },
 				{ layer: "2", yPercent: -40 },
 				{ layer: "3", yPercent: 20 },
 				{ layer: "4", yPercent: 10 }
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				);
 			});
 		});
-	} */
+	}
 });
 /* GSAP COUNTER */
 document.addEventListener("DOMContentLoaded", () => {

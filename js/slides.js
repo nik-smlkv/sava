@@ -253,7 +253,7 @@ const swiperStatistic = new Swiper('.swiper-statistic', {
 const swiperMaterials = new Swiper('.swiper-materials', {
 	slidesPerView: "auto",
 	slidesPerGroup: 1,
-	spaceBetween: 10,
+	spaceBetween: 30,
 	loop: true,
 	cssMode: true,
 	direction: 'horizontal',
