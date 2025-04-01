@@ -1,4 +1,3 @@
-
 :root {
 	--ff-title: "Manrope", sans-serif;
 	--ff-bell: "Bellefair", sans-serif;
@@ -12,7 +11,9 @@
 	--block-header-color: var(--wh-color);
 	--blue-light-color: #42B0F9;
 	--bg-main: #ffffff;
+	--light-gray: #DBDBDB;
 	--title-span-color: #42B0F9;
+	--blue-color: #1F77CF;
 	--fz-title: clamp(48px, 4vw, 80px);
 	--fz-subtitle: clamp(16px, 3vw, 24px);
 	--fz-default: 16px;

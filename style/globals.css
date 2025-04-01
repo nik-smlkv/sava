@@ -145,6 +145,7 @@ img {
 		background-color: var(--blue-color);
 		border-color: var(--blue-color);
 		color: var(--wh-color);
+		backdrop-filter: unset;
 	}
 
 	.link-hover:hover {
@@ -205,6 +206,7 @@ img {
 
 .fz-120 {
 	font-size: 120px;
+	line-height: 100%;
 }
 
 .ff-man {

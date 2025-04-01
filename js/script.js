@@ -283,46 +283,6 @@ const getScrollablePanels = () => {
 		}, { passive: false });
 	}
 };
-document.querySelectorAll('.card-text-content').forEach(card => {
-	card.addEventListener('click', function (event) {
-		const wrapper = document.querySelector('.wrapper');
-		event.preventDefault();
-		console.log('asdas')
-		let existingClone = document.querySelector('.clone-container');
-		let existingOverlay = document.querySelector('.clone-container-overlay');
-
-		if (existingClone) existingClone.remove();
-		if (existingOverlay) existingOverlay.remove();
-
-		const overlay = document.createElement('div');
-		overlay.classList.add('clone-container-overlay');
-		document.body.appendChild(overlay);
-
-		// Создаём клон
-		const cloneContainer = document.createElement('div');
-		cloneContainer.classList.add('clone-container');
-		cloneContainer.classList.add('flex-style-column');
-		cloneContainer.innerHTML = `
-				  ${this.innerHTML}
-			 `;
-		wrapper.appendChild(cloneContainer);
-
-		// Запускаем анимацию (выезжание)
-		setTimeout(() => {
-			cloneContainer.classList.add('active');
-			overlay.classList.add('active');
-		}, 100);
-
-		// Логика закрытия клона
-		const closeButton = cloneContainer.querySelector('.clone-container p');
-		closeButton.addEventListener('click', () => {
-			cloneContainer.classList.remove('active');
-			overlay.classList.remove('active');
-			setTimeout(() => { cloneContainer.remove(); overlay.remove(); }, 400);
-		});
-	});
-});
-
 
 const priceRequestDialog = document.getElementById('priceRequest');
 const openDialogButton = document.querySelector('.open-dialog');
@@ -449,7 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+/* 
 const createOdometer = (el, value) => {
 	const odometer = new Odometer({
 		el: el,
@@ -488,3 +448,19 @@ createOdometer(buildingsOdometer, 4);
 
 const apartmentsOdometer = document.querySelector(".apartments-odometer");
 createOdometer(apartmentsOdometer, 384);
+
+ */
+document.addEventListener('DOMContentLoaded', () => {
+	let buttonsCardOpen = document.querySelectorAll('.circle');
+	buttonsCardOpen.forEach(buttonOpen => {
+		buttonOpen.addEventListener('click', () => {
+			const textContent = buttonOpen.nextElementSibling;
+			textContent.classList.toggle('open');
+			if (textContent.classList.contains('open')) {
+				buttonOpen.innerHTML = "Click <br> closed";
+			} else {
+				buttonOpen.innerHTML = "Click <br> open";
+			}
+		})
+	});
+})

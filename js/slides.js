@@ -28,7 +28,7 @@ function updateSlideScales() {
 		gsap.to(slide, {
 			scale: isActive ? 1 : 0.8,
 			duration: 0.2,
-			ease: "power2.out"
+			ease: "power2.inOut"
 		});
 		slide = isActive ? slide.classList.add('slide-active') : slide.classList.remove('slide-active');
 	});
