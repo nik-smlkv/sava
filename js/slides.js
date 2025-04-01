@@ -1,4 +1,4 @@
-/* const container = document.getElementById("carousel");
+const container = document.getElementById("carousel");
 const fullSlides = document.querySelector('.full-slides');
 let slides = gsap.utils.toArray(".showcase__item");
 const totalSlides = slides.length;
@@ -232,7 +232,7 @@ swiperQuality.on('slideChange', function () {
 
 updateTitle(swiperQuality.activeIndex);
 
- */
+
 const swiperStatistic = new Swiper('.swiper-statistic', {
 	slidesPerView: "auto",
 	slidesPerGroup: 1,
