@@ -106,7 +106,7 @@ img {
 
 .btn-style {
 	display: inline-flex;
-	padding: 16px 24px;
+	padding: 16px clamp(7px, 3vw, 24px);
 	transition: var(--tr-btn);
 	text-transform: uppercase;
 	height: 56px;
@@ -205,7 +205,7 @@ img {
 }
 
 .fz-120 {
-	font-size: 120px;
+	font-size: clamp(60px, 12vw, 120px);
 	line-height: 100%;
 }
 
@@ -225,7 +225,8 @@ img {
 }
 
 h2.title {
-	--lh-title: 115%;
+	--lh-title: 90%;
+	font-size: clamp(40px, 12vw, 120px);
 	line-height: var(--lh-title);
 	color: var(--primary-main-color);
 	font-family: var(--ff-main);
@@ -236,9 +237,9 @@ h2.title .title-span {
 }
 
 h2.fz-80 {
-	--fz-second-title: 80px;
+	--fz-second-title: clamp(40px, 7vw, 80px);
 	font-size: var(--fz-second-title);
-	letter-spacing: -2.4px;
+	letter-spacing: clamp(-1.2px, 5vw, -2.4px);
 }
 
 .fz-40 {
@@ -265,7 +266,7 @@ h2.title.text-light,
 }
 
 .fz-80 {
-	--fz-second-title: 80px;
+	--fz-second-title: clamp(60px, 4vw, 80px);
 	font-variation-settings: "wght" var(--fw-title);
 	line-height: var(--lh-text);
 	color: var(--primary-main-color);
@@ -286,5 +287,5 @@ h2.title.text-light,
 }
 
 .block-height {
-	height: 91vh;
+	height: 100vh;
 }

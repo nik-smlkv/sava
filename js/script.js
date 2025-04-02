@@ -130,7 +130,7 @@ const getHeaderLogo = () => {
 window.addEventListener('DOMContentLoaded', () => {
 	getHeaderClone();
 	getHeaderLogo();
-	getScrollablePanels();
+
 	handleHeaderLinks();
 });
 
@@ -139,7 +139,7 @@ window.addEventListener('resize', () => {
 	getHeaderClone();
 	handleHeaderLinks();
 	getHeaderLogo();
-	getScrollablePanels();
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {

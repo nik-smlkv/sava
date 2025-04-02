@@ -29,9 +29,9 @@ ScrollTrigger.scrollerProxy(document.body, {
 
 var blockImage = document.querySelector('.block-image');
 var sectionBody = document.querySelector('.section__body-main');
-var scrollToVideo = document.querySelector('.scroll-to-video');
+
 const title = document.querySelector(".main-title");
-var scrollPosition = scrollToVideo.offsetTop;
+
 const movingImg = document.querySelector('.moving-img');
 const aboutButton = document.querySelector(".about-button");
 document.addEventListener("DOMContentLoaded", () => {
@@ -144,57 +144,4 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-	var scrollToVideo = document.querySelector(".scroll-to-video");
-
-	function preventScroll(event) {
-		event.preventDefault();
-		event.stopPropagation();
-	}
-	window.addEventListener('DOMContentLoaded', () => {
-		const video = document.querySelector('.video');
-		const scrollToVideo = document.querySelector('.scroll-to-video');
-		if (window.innerWidth >= 768) {
-		/* 	video.pause(); */
-			if (isInSectionBodyMain()) {
-				scrollToVideo.classList.add('js-scrolling');
-			} else {
-				video.style.visibility = "visible";
-				video.play();
-			}
-		}
-	});
-
-	function isInSectionBodyMain() {
-		const sectionBodyMain = document.querySelector('.section__body-main');
-		const scrollPosition = window.scrollY;
-		const sectionTop = sectionBodyMain.offsetTop - 220;
-		const sectionBottom = sectionTop + sectionBodyMain.offsetHeight;
-		return scrollPosition >= sectionTop && scrollPosition <= sectionBottom;
-	}
-
-	if (window.innerWidth >= 768) {
-		var title = document.querySelector(".main-title");
-		var aboutButton = document.querySelector(".about-button");
-
-		var scrollPosition = window.scrollY;
-		var videoPosition = scrollToVideo.offsetTop;
-		var maxScroll = videoPosition - title.offsetHeight;
-		var scrollPercent = Math.min(scrollPosition / maxScroll, 1);
-		if (!scrollToVideo.classList.contains('js-scrolling')) {
-			gsap.to(title, {
-				scrollTrigger: {
-					trigger: title,
-					start: "top top",
-					scrub: true,
-					ease: "linear"
-				},
-				y: -200,
-				opacity: 0,
-				duration: .2
-			});
-		}
-	}
 });
