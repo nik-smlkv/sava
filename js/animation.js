@@ -37,25 +37,6 @@ const aboutButton = document.querySelector(".about-button");
 document.addEventListener("DOMContentLoaded", () => {
 	// Register GSAP Plugins
 
-	/* 	const scrollPanel = () => {
-			if (window.innerWidth > 768) {
-				const cont = document.querySelector("#panels-container");
-				const panels = gsap.utils.toArray("#panels-container .panel");
-				var scrollMath = window.innerWidth > 2560 ? (-2 * (cont.scrollWidth - innerWidth)) : (-1.1 * (cont.scrollWidth - innerWidth));
-				let tween = gsap.to(panels, {
-					x: () => scrollMath,
-					ease: "none",
-					scrollTrigger: {
-						trigger: "#panels-container",
-						pin: true,
-						start: "-20%",
-						scrub: 2,
-						end: () => "+=" + (cont.scrollWidth - (innerWidth / 1.1)),
-					},
-				});
-			}
-		}
-		scrollPanel(); */
 	/*  PARALLAX  */
 	if (window.innerWidth >= 768) {
 		document.querySelectorAll('[data-parallax-layers]').forEach((triggerElement) => {
@@ -176,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const video = document.querySelector('.video');
 		const scrollToVideo = document.querySelector('.scroll-to-video');
 		if (window.innerWidth >= 768) {
-			video.pause();
+		/* 	video.pause(); */
 			if (isInSectionBodyMain()) {
 				scrollToVideo.classList.add('js-scrolling');
 			} else {

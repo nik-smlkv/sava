@@ -267,3 +267,35 @@ const swiperMaterials = new Swiper('.swiper-materials', {
 		prevEl: '.swiper-button-prev',
 	},
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+	const items = document.querySelectorAll('.features-block-info__item');
+	const cards = document.querySelectorAll('.slide-block__card');
+	const arrow = document.querySelector('.features-slide-arrow');
+	const showCard = (index) => {
+		items.forEach((item) => item.classList.remove('active'));
+		cards.forEach((card) => card.classList.remove('active'));
+		if (items[index]) {
+			items[index].classList.add('active');
+		}
+		if (cards[index]) {
+			cards[index].classList.add('active');
+		}
+	};
+	const moveArrow = () => {
+		const activeItem = document.querySelector('.features-block-info__item.active');
+		if (activeItem) {
+			const itemOffsetTop = activeItem.offsetTop;
+			arrow.style.transform = `translateY(${itemOffsetTop}px)`;
+		}
+	};
+	items.forEach((item, index) => {
+		item.addEventListener('click', () => {
+			items.forEach((el) => el.classList.remove('active'));
+			item.classList.add('active');
+			moveArrow()
+			showCard(index);
+		});
+	});
+	showCard(0);
+});
