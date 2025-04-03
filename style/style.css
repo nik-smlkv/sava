@@ -162,7 +162,7 @@ header {
 .parallax-container {
 	width: 100%;
 	height: 100%;
-	max-height: 100vh;
+	max-height: 80vh;
 	overflow: hidden;
 	position: relative;
 }
@@ -888,7 +888,7 @@ h2 {
 }
 
 .fz-100 {
-	font-size: 100px;
+	font-size: clamp(80px, 5vw, 100px);
 	line-height: 100%;
 }
 
@@ -1969,7 +1969,9 @@ input.input-event[value=""]+.input-placeholder {
 	.block-info {
 		width: 100%;
 		height: 100%;
-		padding: 20px;
+		padding: 0px 20px;
+		padding-top: 80px;
+		padding-bottom: 40px;
 		gap: 24px;
 	}
 
@@ -2120,6 +2122,7 @@ input.input-event[value=""]+.input-placeholder {
 		height: 100%;
 	}
 
+<<<<<<< HEAD
 	.investment-angle-apartment {
 		display: none;
 	}
@@ -2149,6 +2152,18 @@ input.input-event[value=""]+.input-placeholder {
 
 	.grid-content p {
 		padding: 0px;
+=======
+	.form__block {
+		flex-direction: column;
+	}
+
+	.footer-block-title {
+		flex: 1 1 100%;
+	}
+
+	.block-form {
+		flex: 1 1 100%;
+>>>>>>> 91eb78659bcc2d3a60a7918ccf74fd2a8c004665
 	}
 
 	.change-text {
@@ -2294,6 +2309,7 @@ input.input-event[value=""]+.input-placeholder {
 		gap: clamp(120px, 20vw, 180px);
 	}
 
+<<<<<<< HEAD
 	.parallax-container {
 		height: 100vh;
 	}
@@ -2305,6 +2321,11 @@ input.input-event[value=""]+.input-placeholder {
 	.swiper-materials .slider-navigation__block {
 		width: 100%;
 		justify-content: space-between;
+=======
+	.footer-block-title p {
+		justify-content: center;
+		text-align: center;
+>>>>>>> 91eb78659bcc2d3a60a7918ccf74fd2a8c004665
 	}
 
 	.parallax-text {
