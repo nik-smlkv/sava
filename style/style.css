@@ -2122,7 +2122,6 @@ input.input-event[value=""]+.input-placeholder {
 		height: 100%;
 	}
 
-<<<<<<< HEAD
 	.investment-angle-apartment {
 		display: none;
 	}
@@ -2152,18 +2151,6 @@ input.input-event[value=""]+.input-placeholder {
 
 	.grid-content p {
 		padding: 0px;
-=======
-	.form__block {
-		flex-direction: column;
-	}
-
-	.footer-block-title {
-		flex: 1 1 100%;
-	}
-
-	.block-form {
-		flex: 1 1 100%;
->>>>>>> 91eb78659bcc2d3a60a7918ccf74fd2a8c004665
 	}
 
 	.change-text {
@@ -2309,7 +2296,6 @@ input.input-event[value=""]+.input-placeholder {
 		gap: clamp(120px, 20vw, 180px);
 	}
 
-<<<<<<< HEAD
 	.parallax-container {
 		height: 100vh;
 	}
@@ -2321,11 +2307,6 @@ input.input-event[value=""]+.input-placeholder {
 	.swiper-materials .slider-navigation__block {
 		width: 100%;
 		justify-content: space-between;
-=======
-	.footer-block-title p {
-		justify-content: center;
-		text-align: center;
->>>>>>> 91eb78659bcc2d3a60a7918ccf74fd2a8c004665
 	}
 
 	.parallax-text {
