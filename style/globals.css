@@ -106,11 +106,12 @@ img {
 
 .btn-style {
 	display: inline-flex;
-	padding: 16px clamp(7px, 3vw, 24px);
+	padding: 16px clamp(12px, 1.2vw, 24px);
 	transition: var(--tr-btn);
 	text-transform: uppercase;
 	height: 56px;
 	cursor: pointer;
+	white-space: nowrap;
 }
 
 .btn-color-gray {
@@ -226,12 +227,14 @@ img {
 
 h2.title {
 	--lh-title: 90%;
-	font-size: clamp(40px, 12vw, 120px);
+	font-size: clamp(60px, 7vw, 120px);
 	line-height: var(--lh-title);
 	color: var(--primary-main-color);
 	font-family: var(--ff-main);
 }
-
+.grid-block-title h2{
+	font-size: clamp(40px, 12vw, 120px);
+}
 h2.title .title-span {
 	margin-left: 0px;
 }
@@ -243,7 +246,7 @@ h2.fz-80 {
 }
 
 .fz-40 {
-	font-size: 40px;
+	font-size: clamp(30px, 2vw, 40px);
 }
 
 .tt-up {

@@ -1,4 +1,4 @@
-let windowsArray = ["1620", "1570", "1380", "1420", "1320", "1200"];
+let windowsArray = ["1620", "1570", "1380", "1420", "1320", "1200, 1000"];
 let originalWindowsArray = [...windowsArray]; // Оригинальная копия массива
 const burger = document.querySelector('.header__burger');
 const headerMenu = document.querySelector('.header__menu');
@@ -11,7 +11,7 @@ let headerLogo = document.querySelector('.header__logo');
 let clonedHeaderBlock = null;
 
 const updateCheckWidth = () => {
-	return window.innerWidth <= 1520 && window.innerWidth >= 768;
+	return window.innerWidth <= 1620 && window.innerWidth >= 768;
 };
 
 // Переключение меню при клике на бургер
@@ -121,6 +121,7 @@ const getHeaderLogo = () => {
 		}
 	} else {
 		if (existingLogo) {
+			
 			existingLogo.remove();
 		}
 	}

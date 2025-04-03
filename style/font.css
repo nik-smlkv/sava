@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
 	font-family: "Manrope-Variable";
 	src: url("../fonts/ManropeVariable.woff2") format("woff2 supports variations"),
 		url("../fonts/ManropeVariable.woff2") format("woff2-variations");
+	font-optical-sizing: auto;
 	font-style: normal;
-	font-weight: 400 700;
+	font-weight: 300 700;
 	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('Manrope-Light.woff2') format('woff2') url('Manrope-Light.woff2') format('woff2');
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
 }
 
 @font-face {

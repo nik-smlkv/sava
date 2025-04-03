@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			});;
 			const layers = [
-				{ layer: "1", yPercent: -30 },
+				{ layer: "1", yPercent: -37 },
 				{ layer: "2", yPercent: -40 },
 				{ layer: "3", yPercent: 20 },
 				{ layer: "4", yPercent: 10 }
