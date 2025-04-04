@@ -242,9 +242,11 @@ h2.title .line .word {
 	--lh-title: 90%;
 	line-height: var(--lh-title);
 }
-.grid-block-title h2 .whitespace{
+
+.grid-block-title h2 .whitespace {
 	display: none;
 }
+
 h2.title .title-span {
 	margin-left: 0px;
 }
@@ -253,6 +255,10 @@ h2.fz-80 {
 	--fz-second-title: clamp(40px, 7vw, 80px);
 	font-size: var(--fz-second-title);
 	letter-spacing: clamp(-1.2px, 5vw, -2.4px);
+}
+
+h2.parallax-title {
+	font-size: clamp(40px, 7vw, 120px);
 }
 
 .fz-40 {

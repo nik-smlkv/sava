@@ -43,6 +43,12 @@
 	position: relative;
 }
 
+@media(max-width: 767.99px) {
+	.parallax-title .line:last-child {
+		left: 20%;
+	}
+}
+
 .video {
 	width: 100%;
 	height: 100%;
@@ -319,6 +325,8 @@ header::before {
 		max-width: 100vw;
 		max-height: 100vh;
 	}
+
+
 }
 
 .block-image img {
@@ -656,6 +664,12 @@ footer {
 	letter-spacing: -13.6px;
 	transition: opacity 0.1s ease, transform 1s ease;
 	flex-direction: column;
+}
+
+@media(max-width: 767.99px) {
+	.main-title {
+		letter-spacing: normal;
+	}
 }
 
 h1::after,
@@ -2356,7 +2370,9 @@ input.input-event[value=""]+.input-placeholder {
 }
 
 .parallax-text {
-	font-weight: 300;
+	font-family: 'Manrope', sans-serif;
+	font-variation-settings: "wght" 200;
+	font-weight: 200;
 }
 
 @media(max-width: 767.99px) {
@@ -2400,6 +2416,9 @@ input.input-event[value=""]+.input-placeholder {
 		background-size: 100vw, 100%;
 	}
 
+	.block-video {
+		height: 70vh;
+	}
 
 	.location__content {
 		flex: 1 1 100%;
@@ -2532,7 +2551,12 @@ input.input-event[value=""]+.input-placeholder {
 	}
 
 	.section__body-main.block-height {
-		height: 50vh;
+		height: 100vh;
+		justify-content: center;
+	}
+
+	.main-block-relative {
+		bottom: 25%;
 	}
 
 	.block-title-scroll {
@@ -2868,6 +2892,9 @@ input.input-event[value=""]+.input-placeholder {
 		justify-content: center;
 	}
 
+	.parallax-name {
+		padding-top: 80px;
+	}
 }
 
 .clone-container {
@@ -2945,6 +2972,7 @@ p.parallax-text {
 	.parallax-container {
 		max-height: 120vh;
 	}
+
 	.parallax-container img {
 		height: 100%;
 	}
