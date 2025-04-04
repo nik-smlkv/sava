@@ -171,11 +171,6 @@ header {
 	height: 100%;
 }
 
-@media(min-width:2560px) {
-	.parallax-container {
-		max-height: 100vh;
-	}
-}
 
 .parallax-container {
 	overflow: hidden;
@@ -355,12 +350,18 @@ header::before {
 }
 
 .swiper-statistic .slider-navigation__block {
-	transform: translate(0%, 110px);
+	transform: translate(0%, 50px);
+}
+
+.map-sava {
+	position: relative;
+	top: -150px;
 }
 
 .slider-navigation__block {
 	gap: 24px;
 	width: 100%;
+	position: relative;
 	max-width: 1920px;
 	padding-right: clamp(20px, 7vw, 121px);
 	justify-content: end;
@@ -544,7 +545,7 @@ header::before {
 }
 
 .title-form div:first-child span:first-child {
-	margin-bottom: 20px;
+	margin-bottom: 6px;
 }
 
 .footer-address__content {
@@ -558,6 +559,7 @@ header::before {
 }
 
 .footer-block-title p {
+	line-height: 110%;
 	justify-content: start;
 	align-items: start;
 	text-align: left;
@@ -689,6 +691,11 @@ h2 {
 .whitespace::after {
 	content: " ";
 	padding-right: 7px;
+}
+
+.statistic-title .whitespace::after {
+	content: " ";
+	padding-right: 24px;
 }
 
 .about-arrow {
@@ -1174,7 +1181,7 @@ figcaption {
 	gap: 120px;
 	width: 100%;
 	align-items: start;
-
+	margin-bottom: clamp(0px, 6vw, 80px);
 }
 
 .slide-block__card {
@@ -2335,8 +2342,17 @@ input.input-event[value=""]+.input-placeholder {
 	width: 103px;
 }
 
+.infrastructure__content {
+	margin-bottom: -150px;
+}
+
 .infrastructure__content img {
 	user-select: none;
+}
+
+.materials-block-title {
+	max-width: 100%;
+	margin-bottom: 50px;
 }
 
 .parallax-text {
@@ -2923,4 +2939,13 @@ input.input-event[value=""]+.input-placeholder {
 
 p.parallax-text {
 	max-width: 685px;
+}
+
+@media(min-width:2560px) {
+	.parallax-container {
+		max-height: 120vh;
+	}
+	.parallax-container img {
+		height: 100%;
+	}
 }
