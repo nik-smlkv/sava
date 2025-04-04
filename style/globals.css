@@ -226,14 +226,24 @@ img {
 }
 
 h2.title {
-	--lh-title: 90%;
 	font-size: clamp(60px, 7vw, 120px);
-	line-height: var(--lh-title);
 	color: var(--primary-main-color);
 	font-family: var(--ff-main);
+	line-height: 94%;
 }
-.grid-block-title h2{
-	font-size: clamp(40px, 12vw, 120px);
+
+h2.title .line .word {
+	--lh-title: 75%;
+	line-height: var(--lh-title);
+}
+
+.grid-block-title h2 {
+	font-size: clamp(40px, 7vw, 120px);
+	--lh-title: 90%;
+	line-height: var(--lh-title);
+}
+.grid-block-title h2 .whitespace{
+	display: none;
 }
 h2.title .title-span {
 	margin-left: 0px;

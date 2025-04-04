@@ -1,4 +1,4 @@
-let windowsArray = ["1620", "1570", "1380", "1420", "1320", "1200, 1000"];
+let windowsArray = ["1770", "1620", "1520", "1420", "1320", "1200", "1000", "900"];
 let originalWindowsArray = [...windowsArray]; // Оригинальная копия массива
 const burger = document.querySelector('.header__burger');
 const headerMenu = document.querySelector('.header__menu');
@@ -11,7 +11,7 @@ let headerLogo = document.querySelector('.header__logo');
 let clonedHeaderBlock = null;
 
 const updateCheckWidth = () => {
-	return window.innerWidth <= 1620 && window.innerWidth >= 768;
+	return window.innerWidth <= 1770 && window.innerWidth >= 768;
 };
 
 // Переключение меню при клике на бургер
@@ -121,7 +121,7 @@ const getHeaderLogo = () => {
 		}
 	} else {
 		if (existingLogo) {
-			
+
 			existingLogo.remove();
 		}
 	}
@@ -464,4 +464,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	});
+
+	if (window.innerWidth <= 1000) {
+		const slidesBlock = document.querySelector('.slides-block__content');
+		const infoListItems = document.querySelectorAll('.block-info__list .features-block-info__item');
+		const clonedSlidesBlock = slidesBlock.cloneNode(true);
+		if (clonedSlidesBlock) {
+			slidesBlock.classList.add('remove-block');
+			if (slidesBlock.classList.contains('remove-block')) {
+				slidesBlock.remove();
+			}
+		}
+		const slides = clonedSlidesBlock.querySelectorAll('.slide-block__card');
+		infoListItems.forEach((item, index) => {
+			if (slides[index]) {
+				item.appendChild(slides[index]);
+			}
+		});
+	}
 })
+

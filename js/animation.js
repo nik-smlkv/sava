@@ -46,9 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
 					start: "-70% 0%",
 					scrub: true,
 				}
-			});;
+			});
+			const isWindowScreen = window.innerWidth <= 2560;
 			const layers = [
-				{ layer: "1", yPercent: -37 },
+				{ layer: "1", yPercent: isWindowScreen ? -37 : -40 },
 				{ layer: "2", yPercent: -40 },
 				{ layer: "3", yPercent: 20 },
 				{ layer: "4", yPercent: 10 }
