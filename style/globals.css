@@ -2,7 +2,7 @@
 *::after,
 *::before {
 	box-sizing: border-box;
-
+	-webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -238,7 +238,7 @@ h2.title .line .word {
 }
 
 .grid-block-title h2 {
-	font-size: clamp(40px, 7vw, 120px);
+	font-size: clamp(40px, 6vw, 120px);
 	--lh-title: 90%;
 	line-height: var(--lh-title);
 }

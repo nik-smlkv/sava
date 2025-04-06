@@ -71,6 +71,8 @@ const getHeaderClone = () => {
 			temporalHeaderNav.querySelectorAll('li').forEach(item => item.remove());
 			headerBody.insertAdjacentElement("afterbegin", headerNav);
 			headerMenu.insertAdjacentElement("afterbegin", temporalHeaderNav);
+			const phoneLink = headerMenu.querySelector('.nav-clone .phone-link')
+			if(phoneLink){phoneLink.remove();}
 		}
 	} else {
 		const existingClone = headerMenu.querySelector('.nav-clone');
