@@ -23,7 +23,7 @@ ul,
 ol,
 li {
 	margin: 0;
-	padding: 0;
+	padding-right: 0;
 
 }
 
@@ -232,6 +232,14 @@ h2.title {
 	line-height: 94%;
 }
 
+h2.statistic-title {
+	font-size: clamp(40px, 5vw, 120px);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: end;
+}
+
+
 h2.title .line .word {
 	--lh-title: 75%;
 	line-height: var(--lh-title);
@@ -249,6 +257,12 @@ h2.title .line .word {
 
 h2.title .title-span {
 	margin-left: 0px;
+}
+
+@media(max-width: 767.99px) {
+	h2.title {
+		letter-spacing: -1.8px;
+	}
 }
 
 h2.fz-80 {

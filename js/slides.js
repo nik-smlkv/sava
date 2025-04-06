@@ -5,8 +5,13 @@ const totalSlides = slides.length;
 fullSlides.textContent = totalSlides;
 const slideEase = "back.out(1.3)";
 const slideWidth = 33.33;
+let gapX;
 const gapContainer = 2;
-const gapX = (gapContainer / slideWidth) * 100;
+if (window.innerWidth >= 768) {
+	gapX = (gapContainer / slideWidth) * 100;
+} else {
+	gapX = 10;
+}
 const moveAmountX = 90 + gapX;
 const baseOffset = Math.round((33.33 / slideWidth) * 100);
 const minX = baseOffset - moveAmountX;
@@ -25,16 +30,20 @@ let isAnimating = false;
 function updateSlideScales() {
 	slides.forEach((slide) => {
 		const isActive = slide._gsap.xPercent === 100;
-		gsap.to(slide, {
-			scale: isActive ? 1 : 0.8,
-			duration: 0.2,
-			ease: "power2.inOut"
-		});
+		if (window.innerWidth >= 768) {
+			gsap.to(slide, {
+				scale: isActive ? 1 : 0.8,
+				duration: 0.2,
+				ease: "power2.inOut"
+			});
+		}
 		slide = isActive ? slide.classList.add('slide-active') : slide.classList.remove('slide-active');
+
 	});
 	const activeSlide = slides.find(slide => slide.classList.contains('slide-active'));
 	const currentSlide = document.querySelector('.current-slide');
 	currentSlide.textContent = activeSlide.getAttribute('data-slide');
+
 }
 
 function go(dir) {
@@ -269,33 +278,35 @@ const swiperMaterials = new Swiper('.swiper-materials', {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-	const items = document.querySelectorAll('.features-block-info__item');
-	const cards = document.querySelectorAll('.slide-block__card');
-	const arrow = document.querySelector('.features-slide-arrow');
-	const showCard = (index) => {
-		items.forEach((item) => item.classList.remove('active'));
-		cards.forEach((card) => card.classList.remove('active'));
-		if (items[index]) {
-			items[index].classList.add('active');
-		}
-		if (cards[index]) {
-			cards[index].classList.add('active');
-		}
-	};
-	const moveArrow = () => {
-		const activeItem = document.querySelector('.features-block-info__item.active');
-		if (activeItem) {
-			const itemOffsetTop = activeItem.offsetTop;
-			arrow.style.transform = `translateY(${itemOffsetTop}px)`;
-		}
-	};
-	items.forEach((item, index) => {
-		item.addEventListener('click', () => {
-			items.forEach((el) => el.classList.remove('active'));
-			item.classList.add('active');
-			moveArrow()
-			showCard(index);
+	if (window.innerWidth >= 1000) {
+		const items = document.querySelectorAll('.features-block-info__item');
+		const cards = document.querySelectorAll('.slide-block__card');
+		const arrow = document.querySelector('.features-slide-arrow');
+		const showCard = (index) => {
+			items.forEach((item) => item.classList.remove('active'));
+			cards.forEach((card) => card.classList.remove('active'));
+			if (items[index]) {
+				items[index].classList.add('active');
+			}
+			if (cards[index]) {
+				cards[index].classList.add('active');
+			}
+		};
+		const moveArrow = () => {
+			const activeItem = document.querySelector('.features-block-info__item.active');
+			if (activeItem) {
+				const itemOffsetTop = activeItem.offsetTop;
+				arrow.style.transform = `translateY(${itemOffsetTop}px)`;
+			}
+		};
+		items.forEach((item, index) => {
+			item.addEventListener('click', () => {
+				items.forEach((el) => el.classList.remove('active'));
+				item.classList.add('active');
+				moveArrow()
+				showCard(index);
+			});
 		});
-	});
-	showCard(0);
+		showCard(0);
+	}
 });

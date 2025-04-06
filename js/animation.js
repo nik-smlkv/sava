@@ -146,3 +146,35 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+
+let rightPosition = 0;
+
+function adjustBackgroundPosition() {
+	const mainBlock = document.querySelector('.main-block');
+	rightPosition += 0.01;
+	if (mainBlock) {
+		mainBlock.style.backgroundPosition = `calc(38vw + ${rightPosition}vw) bottom, center center`;
+	}
+}
+
+window.addEventListener('resize', () => {
+	if (window.innerWidth <= 1840 && window.innerWidth >= 768) {
+		adjustBackgroundPosition();
+	} else {
+		const mainBlock = document.querySelector('.main-block');
+		mainBlock.style.backgroundPosition = `auto bottom, center center`;
+	}
+});
+window.addEventListener('DOMContentLoaded', () => {
+	if (window.innerWidth <= 1840 && window.innerWidth >= 768) {
+		adjustBackgroundPosition();
+	}
+});
+
+
+
+gsap.to('.investment-apartment', {
+	duration: 1, // Длительность анимации в секундах
+	height: 'auto', // Конечная высота
+	ease: 'power2.out', // Тип анимации
+});

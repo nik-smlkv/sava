@@ -1,4 +1,4 @@
-let windowsArray = ["1770", "1620", "1520", "1420", "1320", "1200", "1000", "900"];
+let windowsArray = ["1770", "1769", "1768", "1700", "1420", "1320", "1200", "1000", "900"];
 let originalWindowsArray = [...windowsArray]; // Оригинальная копия массива
 const burger = document.querySelector('.header__burger');
 const headerMenu = document.querySelector('.header__menu');
@@ -19,22 +19,6 @@ burger.addEventListener('click', (event) => {
 	event.stopPropagation(); // Предотвращаем всплытие
 	headerMenu.classList.toggle('active');
 
-	if (headerMenu.classList.contains('active')) {
-		const headerBlock = document.querySelector('.header-block');
-		clonedHeaderBlock = headerBlock.cloneNode(true);
-
-		const childToRemove = clonedHeaderBlock.querySelector('.header__burger');
-		if (childToRemove) {
-			clonedHeaderBlock.removeChild(childToRemove);
-		}
-
-		headerMenu.appendChild(clonedHeaderBlock);
-	} else {
-		if (clonedHeaderBlock) {
-			clonedHeaderBlock.remove();
-			clonedHeaderBlock = null;
-		}
-	}
 });
 
 // Закрытие меню при клике вне его области
@@ -63,6 +47,44 @@ document.querySelectorAll('.header__nav a').forEach(link => {
 	});
 });
 
+function cloneButton() {
+	const button = document.querySelector('.header-block .js-scroll-form');
+	const phoneLink = document.querySelector('.header-block .phone-link');
+	const headerBlock = document.querySelector('.header-block');
+	const headerMenu = document.querySelector('.header__menu');
+	const headerLogo = headerMenu.querySelector('.header__menu .header__logo');
+	const mobileHeaderMenuBlock = document.createElement('div');
+	mobileHeaderMenuBlock.classList.add('flex-style-column')
+	mobileHeaderMenuBlock.classList.add('block-header-menu')
+	const clonedButton = button.cloneNode(true);
+	const clonedPhone = phoneLink.cloneNode(true);
+	const isBurgerMenu = window.innerWidth <= 1770;
+	console.log(isBurgerMenu);
+	if (isBurgerMenu) {
+		mobileHeaderMenuBlock.appendChild(clonedButton);
+		mobileHeaderMenuBlock.appendChild(clonedPhone);
+		headerMenu.appendChild(mobileHeaderMenuBlock);
+		headerBlock.appendChild(headerLogo);
+		button.remove();
+		phoneLink.remove();
+	} else {
+		headerBlock.appendChild(button);
+
+		headerBlock.appendChild(phoneLink);
+	}
+
+}
+
+function checkScreenWidth() {
+	const headerMenuBlock = document.querySelector('.block-header-menu');
+	if (window.innerWidth <= 1770 && !headerMenuBlock) {
+		cloneButton();
+	}
+}
+
+window.addEventListener('resize', checkScreenWidth);
+window.addEventListener('load', checkScreenWidth);
+
 // Обновление клона меню
 const getHeaderClone = () => {
 	const checkWidth = updateCheckWidth();
@@ -71,8 +93,6 @@ const getHeaderClone = () => {
 			temporalHeaderNav.querySelectorAll('li').forEach(item => item.remove());
 			headerBody.insertAdjacentElement("afterbegin", headerNav);
 			headerMenu.insertAdjacentElement("afterbegin", temporalHeaderNav);
-			const phoneLink = headerMenu.querySelector('.nav-clone .phone-link')
-			if(phoneLink){phoneLink.remove();}
 		}
 	} else {
 		const existingClone = headerMenu.querySelector('.nav-clone');
@@ -111,28 +131,11 @@ const handleHeaderLinks = () => {
 	}
 };
 // Обновление логотипа
-const getHeaderLogo = () => {
-	const checkWidth = updateCheckWidth();
-	const existingLogo = headerBody.querySelector('.header__logo.clone');
-
-	if (checkWidth) {
-		if (!existingLogo) {
-			const clonedHeaderLogo = headerLogo.cloneNode(true);
-			clonedHeaderLogo.classList.add('clone');
-			headerBody.appendChild(clonedHeaderLogo);
-		}
-	} else {
-		if (existingLogo) {
-
-			existingLogo.remove();
-		}
-	}
-};
 
 // Инициализация при загрузке
 window.addEventListener('DOMContentLoaded', () => {
 	getHeaderClone();
-	getHeaderLogo();
+
 
 	handleHeaderLinks();
 });
@@ -141,7 +144,7 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('resize', () => {
 	getHeaderClone();
 	handleHeaderLinks();
-	getHeaderLogo();
+
 
 });
 
@@ -478,11 +481,37 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 		const slides = clonedSlidesBlock.querySelectorAll('.slide-block__card');
+		const infoListBlockItems = document.querySelectorAll('.block-item');
+		infoListBlockItems.forEach((item) => {
+			item.style.height = item.scrollHeight;
+			item.insertAdjacentHTML('beforeend', `<svg width="50" height="30" viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M33.3333 0C33.3333 1.59 34.8604 3.96429 36.4062 5.95714C38.3937 8.52857 40.7687 10.7721 43.4917 
+				12.4843C45.5333 13.7679 48.0083 15 50 15M50 15C48.0083 15 45.5312 16.2321 43.4917 17.5157C40.7687 19.23 38.3937 
+				21.4736 36.4062 24.0407C34.8604 26.0357 33.3333 28.4143 33.3333 30M50 15H0" stroke="#0D1925" stroke-width="1.2766"/>
+				</svg>
+				`)
+		})
 		infoListItems.forEach((item, index) => {
+			item.style.maxHeight = `calc(${infoListBlockItems[index].scrollHeight}px + 56px)`;
+
+
+
 			if (slides[index]) {
 				item.appendChild(slides[index]);
 			}
+			item.addEventListener('click', () => {
+				let heightSlideBlock = `${slides[index].scrollHeight}px`;
+				let heightBlockItem = `${infoListBlockItems[index].scrollHeight + 56}px`;
+				console.log(heightSlideBlock);
+				item.classList.toggle('active')
+				if (item.classList.contains('active')) {
+					item.style.maxHeight = `calc(${heightSlideBlock} + ${heightBlockItem} + 56px)`;
+				} else {
+					item.style.maxHeight = `calc(${infoListBlockItems[index].scrollHeight}px + 56px)`;
+				}
+			});
 		});
+		infoListItems[infoListItems.length - 1].style.maxHeight = `calc(${infoListBlockItems[infoListBlockItems.length - 1].scrollHeight}px + 112px)`;
 	}
 })
 
