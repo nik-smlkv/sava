@@ -194,23 +194,20 @@ gsap.fromTo('.investment-apartment', {
 
 // Анимация для .investment-lobby
 gsap.fromTo('.investment-lobby', {
-	height: '0',
-	opacity: 0
+	height: '0',   // Начальная высота
+	opacity: 0     // Начальная прозрачность
 }, {
 	duration: 1,
-	height: '100%',
-
-	opacity: 1,
+	height: '100%', // Конечная высота
+	opacity: 1,     // Конечная прозрачность
 	ease: 'power2.out',
 	scrollTrigger: {
-		trigger: '.investment-block',
-		start: 'center bottom',
-		end: 'bottom center',
+		trigger: '.investment-block', // Триггер для анимации
+		start: 'top bottom',          // Начало анимации
+		end: 'bottom center',         // Конец анимации
 		toggleActions: 'play none none reverse',
-
 	}
 });
-
 // Анимация для .investment-subtitle-anim
 gsap.fromTo('.investment-subtitle-anim', {
 	opacity: 0,

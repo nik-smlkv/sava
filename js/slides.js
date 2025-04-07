@@ -291,6 +291,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (cards[index]) {
 				cards[index].classList.add('active');
 			}
+			const arrowImage = document.querySelector('.features-arrow-bg');
+			if (arrowImage) {
+				arrowImage.src = `./images/arrow-${index + 1}.jpg`;
+			}
 		};
 		const moveArrow = () => {
 			const activeItem = document.querySelector('.features-block-info__item.active');
