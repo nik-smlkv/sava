@@ -175,12 +175,12 @@ window.addEventListener('DOMContentLoaded', () => {
 // Анимация для .investment-apartment
 gsap.fromTo('.investment-apartment', {
 	height: '0%',
-	y: 100,
+
 	opacity: 0
 }, {
 	duration: 1,
 	height: '100%',
-	y: 0,
+
 	opacity: 1,
 	ease: 'power2.out',
 	scrollTrigger: {
@@ -194,13 +194,12 @@ gsap.fromTo('.investment-apartment', {
 
 // Анимация для .investment-lobby
 gsap.fromTo('.investment-lobby', {
-	height: '0%',
-	y: 100,
+	height: '0',
 	opacity: 0
 }, {
 	duration: 1,
 	height: '100%',
-	y: 0,
+
 	opacity: 1,
 	ease: 'power2.out',
 	scrollTrigger: {
@@ -215,11 +214,11 @@ gsap.fromTo('.investment-lobby', {
 // Анимация для .investment-subtitle-anim
 gsap.fromTo('.investment-subtitle-anim', {
 	opacity: 0,
-	y: 50
+
 }, {
 	duration: 1,
 	opacity: 1,
-	y: 0,
+
 	ease: 'power2.out',
 	scrollTrigger: {
 		trigger: '.investment-block',
@@ -233,11 +232,11 @@ gsap.fromTo('.investment-subtitle-anim', {
 // Анимация для .grid-content-text
 gsap.fromTo('.grid-content-text', {
 	opacity: 0, // Начальная прозрачность
-	y: 50       // Начальное положение ниже
+	// Начальное положение ниже
 }, {
 	duration: 1,
 	opacity: 1, // Конечная прозрачность
-	y: 0,       // Конечное положение
+	// Конечное положение
 	ease: 'linear',
 	scrollTrigger: {
 		trigger: '.investment-block',
@@ -250,21 +249,20 @@ gsap.fromTo('.grid-content-text', {
 
 gsap.fromTo('.investment-angle-apartment', {
 	height: '0',   // Начальная высота
-	y: 100,        // Начальное положение ниже
 	opacity: 0     // Начальная прозрачность
 }, {
 	duration: 1,
-	height: '506px', // Конечная высота
-	y: 0,           // Конечное положение
-	opacity: 1,     // Конечная прозрачность
+	height: '100%', // Конечная высота
+	opacity: 1,      // Конечная прозрачность
 	ease: 'power2.out',
 	scrollTrigger: {
-		trigger: '.investment-block',
-		start: 'center bottom',  // Начало анимации
-		end: 'bottom center',  // Конец анимации
+		trigger: '.investment-block', // Триггер для анимации
+		start: 'center bottom',          // Начало анимации
+		end: 'bottom center',         // Конец анимации
 		toggleActions: 'play none none reverse',
 	}
 });
+
 /* gsap.to('.main-block', {
 	height: 0,
 	duration: 1,
@@ -278,40 +276,43 @@ gsap.fromTo('.investment-angle-apartment', {
 });
 
  */
-const layers = gsap.utils.toArray(".layer-section");
 
-layers.forEach((layer, i) => {
-	const pauseLayer = Boolean(layer.dataset.pauseLayer);
-	if (pauseLayer) {
-		gsap.set(layer, { marginBottom: "100vh" });
-		const slides = gsap.utils.toArray(".horizontal-slide", layer);
-		gsap.to(slides, {
-			xPercent: -100 * (slides.length - 1),
-			ease: "power1.inOut",
-			scrollTrigger: {
+if (window.innerWidth >= 768) {
+	const layers = gsap.utils.toArray(".layer-section");
+
+	layers.forEach((layer, i) => {
+		const pauseLayer = Boolean(layer.dataset.pauseLayer);
+		if (pauseLayer) {
+			gsap.set(layer, { marginBottom: "0vh" });
+			const slides = gsap.utils.toArray(".horizontal-slide", layer);
+			gsap.to(slides, {
+				xPercent: -100 * (slides.length - 1),
+				ease: "power1.inOut",
+				scrollTrigger: {
+					trigger: layer,
+					start: "top top",
+					end: "+=0%",
+					scrub: true
+				}
+			});
+			ScrollTrigger.create({
 				trigger: layer,
 				start: "top top",
-				end: "+=200%",
-				scrub: true
-			}
-		});
-		ScrollTrigger.create({
-			trigger: layer,
-			start: "top top",
-			end: "+=100%",
-			scrub: true,
-			pin: true,
-			pinSpacing: false,
-			id: i + 1,
-		});
-	} else {
-		ScrollTrigger.create({
-			trigger: layer,
-			start: "top top",
-			end: "+=80%",
-			pin: true,
-			pinSpacing: false,
-			id: i + 1,
-		});
-	}
-});
+				end: "+=0%",
+				scrub: true,
+				pin: true,
+				pinSpacing: false,
+				id: i + 1,
+			});
+		} else {
+			ScrollTrigger.create({
+				trigger: layer,
+				start: "top top",
+				end: "+=80%",
+				pin: true,
+				pinSpacing: false,
+				id: i + 1,
+			});
+		}
+	});
+}
