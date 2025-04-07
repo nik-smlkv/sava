@@ -172,9 +172,146 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Анимация для .investment-apartment
+gsap.fromTo('.investment-apartment', {
+	height: '0%',
+	y: 100,
+	opacity: 0
+}, {
+	duration: 1,
+	height: '100%',
+	y: 0,
+	opacity: 1,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.investment-block',
+		start: 'top bottom',
+		end: 'bottom center',
+		toggleActions: 'play none none reverse',
 
-gsap.to('.investment-apartment', {
-	duration: 1, // Длительность анимации в секундах
-	height: 'auto', // Конечная высота
-	ease: 'power2.out', // Тип анимации
+	}
+});
+
+// Анимация для .investment-lobby
+gsap.fromTo('.investment-lobby', {
+	height: '0%',
+	y: 100,
+	opacity: 0
+}, {
+	duration: 1,
+	height: '100%',
+	y: 0,
+	opacity: 1,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.investment-block',
+		start: 'center bottom',
+		end: 'bottom center',
+		toggleActions: 'play none none reverse',
+
+	}
+});
+
+// Анимация для .investment-subtitle-anim
+gsap.fromTo('.investment-subtitle-anim', {
+	opacity: 0,
+	y: 50
+}, {
+	duration: 1,
+	opacity: 1,
+	y: 0,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.investment-block',
+		start: 'center bottom',
+		end: 'bottom center',
+		toggleActions: 'play none none reverse',
+
+	}
+});
+
+// Анимация для .grid-content-text
+gsap.fromTo('.grid-content-text', {
+	opacity: 0, // Начальная прозрачность
+	y: 50       // Начальное положение ниже
+}, {
+	duration: 1,
+	opacity: 1, // Конечная прозрачность
+	y: 0,       // Конечное положение
+	ease: 'linear',
+	scrollTrigger: {
+		trigger: '.investment-block',
+		start: 'center bottom',
+		end: 'bottom center',
+		toggleActions: 'play none none reverse',
+
+	}
+});
+
+gsap.fromTo('.investment-angle-apartment', {
+	height: '0',   // Начальная высота
+	y: 100,        // Начальное положение ниже
+	opacity: 0     // Начальная прозрачность
+}, {
+	duration: 1,
+	height: '506px', // Конечная высота
+	y: 0,           // Конечное положение
+	opacity: 1,     // Конечная прозрачность
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.investment-block',
+		start: 'center bottom',  // Начало анимации
+		end: 'bottom center',  // Конец анимации
+		toggleActions: 'play none none reverse',
+	}
+});
+/* gsap.to('.main-block', {
+	height: 0,
+	duration: 1,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '#about-project', // Второй блок
+		start: 'top bottom',       // Начало анимации
+		end: 'bottom top',         // Конец анимации
+		scrub: true,               // Плавное взаимодействие
+	}
+});
+
+ */
+const layers = gsap.utils.toArray(".layer-section");
+
+layers.forEach((layer, i) => {
+	const pauseLayer = Boolean(layer.dataset.pauseLayer);
+	if (pauseLayer) {
+		gsap.set(layer, { marginBottom: "100vh" });
+		const slides = gsap.utils.toArray(".horizontal-slide", layer);
+		gsap.to(slides, {
+			xPercent: -100 * (slides.length - 1),
+			ease: "power1.inOut",
+			scrollTrigger: {
+				trigger: layer,
+				start: "top top",
+				end: "+=200%",
+				scrub: true
+			}
+		});
+		ScrollTrigger.create({
+			trigger: layer,
+			start: "top top",
+			end: "+=100%",
+			scrub: true,
+			pin: true,
+			pinSpacing: false,
+			id: i + 1,
+		});
+	} else {
+		ScrollTrigger.create({
+			trigger: layer,
+			start: "top top",
+			end: "+=80%",
+			pin: true,
+			pinSpacing: false,
+			id: i + 1,
+		});
+	}
 });

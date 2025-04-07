@@ -21,9 +21,13 @@
 
 .investment-apartment {
 	height: 0;
+	transition: 0.8s all ease;
 	overflow: hidden;
 }
 
+.investment-subtitle-anim {
+	transition: 1 all ease;
+}
 
 .block-video {
 	height: 100vh;
@@ -314,6 +318,7 @@ header::before {
 }
 
 .main-block {
+	overflow: hidden;
 	background: url('../images/svg/home-main.svg'), radial-gradient(95.32% 95.3% at 76.46% 100%, #001323 0%, #07315F 100%);
 	background-size: auto, 100%;
 	background-repeat: no-repeat;
@@ -1441,7 +1446,8 @@ figcaption {
 
 .grid-content-text {
 	grid-area: text;
-
+	opacity: 0;
+	transition: 1s ease;
 	gap: 24px;
 }
 
@@ -1476,7 +1482,7 @@ figcaption {
 	/* max-height: 503px; */
 	align-self: end;
 	width: 540px;
-	height: 506px;
+	height: 0px;
 	/* height: 100%; */
 	align-self: start;
 	/* width: 100%; */
